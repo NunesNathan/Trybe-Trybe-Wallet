@@ -12,7 +12,6 @@ function App() {
         path="/"
         exact
       >
-        <Header />
         <Login />
         <Footer />
       </Route>
