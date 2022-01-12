@@ -12,8 +12,11 @@ class Header extends Component {
         <span data-testid="email-field">
           {`Email: ${email}`}
         </span>
-        <span data-testid="total-field">
-          {`total:${total} `}
+        <span>
+          {'total: '}
+        </span>
+        <span id="total-field" data-testid="total-field">
+          {total}
         </span>
         <span data-testid="header-currency-field">
           {BRL}
