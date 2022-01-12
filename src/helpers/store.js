@@ -1,3 +1,5 @@
+import { formatPrice } from './allies';
+
 export function getElemValue() {
   return document.querySelector('#total-field');
 }
@@ -10,5 +12,5 @@ export function getValue() {
 export function sumValue(toSum) {
   const valueNum = getValue();
   const value = getElemValue();
-  value.innerHTML = (valueNum + Number(toSum));
+  value.innerHTML = formatPrice(valueNum + Number(toSum));
 }
