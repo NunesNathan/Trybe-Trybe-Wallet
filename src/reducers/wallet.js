@@ -4,16 +4,16 @@ import { SAVE_EXPENSE } from '../actions';
 
 const initialState = {
   currencies: [],
-  expenses: '',
+  expenses: [],
 };
 
 const wallet = (state = initialState, action) => {
   switch (action.type) {
   case SAVE_EXPENSE:
     if (state.expenses.length > 0) {
-      return { expenses: [...state.expenses, action.payload] };
+      return { ...state, expenses: [...state.expenses, action.payload] };
     }
-    return { expenses: [action.payload] };
+    return { ...state, expenses: [action.payload] };
   default:
     return state;
   }

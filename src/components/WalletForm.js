@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import PropType from 'prop-types';
 import { connect } from 'react-redux';
-import Input from '../components/Input';
-import Select from '../components/Select';
-import Button from '../components/Button';
+import Input from './Input';
+import Select from './Select';
+import Button from './Button';
 import { expenseThunk } from '../actions';
 import { fetchCurrencyOptions } from '../helpers/currencyAPI';
 
