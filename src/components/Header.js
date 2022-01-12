@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import PropType from 'prop-types';
 import { connect } from 'react-redux';
+import { initialValue } from '../helpers/events';
 
 class Header extends Component {
   render() {
     const { email } = this.props;
-    const [BRL, total] = ['BRL', 0];
+    const [BRL, total] = ['BRL', initialValue()];
     return (
       <header>
         <h1>Header</h1>

@@ -13,6 +13,7 @@ class WalletForm extends Component {
 
     const alimentacao = 'Alimentação';
     this.state = {
+      id: 0,
       value: '',
       description: '',
       currency: 'USD',
@@ -54,17 +55,15 @@ class WalletForm extends Component {
   }
 
   saveExpense = () => {
-    const { value, description, currency, method, tag } = this.state;
-    const { dispatch, id } = this.props;
+    const { id, value, description, currency, method, tag } = this.state;
+    const { dispatch } = this.props;
     const expense = { id, value, currency, method, tag, description };
 
     dispatch(expenseThunk(expense));
     this.setState({
+      id: id + 1,
       value: '',
       description: '',
-      currency: 'USD',
-      method: 'Dinheiro',
-      tag: 'Alimentação',
     });
   }
 
@@ -145,11 +144,6 @@ class WalletForm extends Component {
 
 WalletForm.propTypes = {
   dispatch: PropType.func.isRequired,
-  id: PropType.number.isRequired,
 };
 
-const mapStateToProps = (state) => ({
-  id: state.wallet.expenses.length,
-});
-
-export default connect(mapStateToProps)(WalletForm);
+export default connect()(WalletForm);

@@ -7,15 +7,15 @@ export const fetchCurrency = async () => {
 
 export const fetchCurrencyOptions = async () => {
   const response = Object.entries(await fetchCurrency());
-  const myObj = [];
+  const currencyList = [];
 
   response.forEach(([a, b]) => {
     if (a !== 'USDT' && a !== 'DOGE') {
-      myObj.push({ currency: a, currencyStatus: b });
+      currencyList.push({ currency: a, currencyStatus: b });
     }
   });
 
-  return myObj;
+  return currencyList;
 };
 
 export const realItemValue = ({ ask }, value) => {
